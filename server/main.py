@@ -10,8 +10,8 @@ from google.appengine.ext import ndb
 from lib import bottle
 from lib.bottle import abort, post, get, request, error, debug, redirect, response, static_file
 
-import src.rest
-import src.routes
+import source.rest
+import source.routes
 
 
 def main():
