@@ -17,7 +17,8 @@
       "reactjs",
       "backbonejs",
       "gulp",
-      "browserify"
+      "browserify",
+      "bottle"
   ],
   "private": true,
   "bugs": {
