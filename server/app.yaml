@@ -1,0 +1,31 @@
+application: todo
+version: 1
+runtime: python27
+api_version: 1
+threadsafe: no
+
+skip_files:
+- ^(.*/)?#.*#$
+- ^(.*/)?.*~$
+- ^(.*/)?.*\.py[co]$
+- ^(.*/)?.*/RCS/.*$
+- ^(.*/)?\..*$
+- ^(.*/)?^node_modules/.*$
+
+
+handlers:
+- url: /static
+  static_dir: static
+
+- url: /src
+  static_dir: src
+
+- url: /build
+  static_dir: build
+
+- url: /.*
+  script: main.py
+
+libraries:
+- name: webapp2
+  version: latest
