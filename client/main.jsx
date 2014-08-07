@@ -36,7 +36,7 @@ var InterfaceComponent = React.createClass({
                 <Well>
                     <p>TODO: replace with notes react tutorial</p>
                 </Well>
-                );
+            );
         }
         if (this.props.router.current[0] == 'todos') {
             nav = 3;
