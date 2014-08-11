@@ -13,12 +13,14 @@ Dependencies
 
 ```
 cd google-app-engine-react-backbone
-npm -g install gulp
+npm -g install gulp (only need to do this once)
 npm install
 gulp
 ```
 
-#### Star the gae server
+In the future you'll usually only need to run `gulp` unless you add a dependency. The `gulp` command will continue to run and re-build things for you as you change files.
+
+#### Start the gae server
 
 ```
 dev_appserver.py server/
