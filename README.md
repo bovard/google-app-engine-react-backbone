@@ -13,7 +13,7 @@ Dependencies
 
 ```
 cd google-app-engine-react-backbone
-npm -g install gulp # (only need to do this once)
+npm -g install gulp  #(only need to do this once)
 npm install
 gulp
 ```
