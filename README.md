@@ -42,7 +42,7 @@ Used to create all front end code.
 
 #### React-Bootstrap
 
-Make things pretty.
+Make things pretty. See code snippets [here](http://react-bootstrap.github.io/components.html).
 
 #### gulp/browserify
 
