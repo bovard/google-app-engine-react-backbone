@@ -45,3 +45,7 @@ Make things pretty.
 #### gulp/browserify
 
 Module management and bundling.
+
+#### backbone.js
+
+Url routing and history (not used to its fullest potential)
