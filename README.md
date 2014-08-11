@@ -23,6 +23,7 @@ In the future you'll usually only need to run `gulp` unless you add a dependency
 #### Start the gae server
 
 ```
+cd google-app-engine-react-backbone
 dev_appserver.py server/
 ```
 
