@@ -7,6 +7,8 @@ Backbone.$ = $;
 var Well = require('react-bootstrap').Well;
 
 var MainNav = require('./MainNav');
+var CommentList = require('./CommentList')
+
 
 var InterfaceComponent = React.createClass({
     componentWillMount : function() {
@@ -34,7 +36,7 @@ var InterfaceComponent = React.createClass({
             nav = 2;
             content = (
                 <Well>
-                    <p>TODO: replace with notes react tutorial</p>
+                    <CommentList />
                 </Well>
             );
         }

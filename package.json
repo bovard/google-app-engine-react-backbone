@@ -12,13 +12,13 @@
     "url": "https://github.com/bovard/google-app-engine-react-backbone"
   },
   "keywords": [
-      "google",
-      "app engine",
-      "reactjs",
-      "backbonejs",
-      "gulp",
-      "browserify",
-      "bottle"
+    "google",
+    "app engine",
+    "reactjs",
+    "backbonejs",
+    "gulp",
+    "browserify",
+    "bottle"
   ],
   "private": true,
   "bugs": {
@@ -41,6 +41,7 @@
     "reactify": "~0.13.1",
     "backbone": "~1.1.2",
     "jquery": "~2.1.1",
-    "browser-request": "~0.3.2"
+    "browser-request": "~0.3.2",
+    "marked": "~0.3.2"
   }
 }
