@@ -32,6 +32,7 @@ var CommentBox = React.createClass({
             url: urls.GET.allComments,
             dataType: 'json',
             success: function(data) {
+                console.log(data)
                 this.setState({data: data});
             }.bind(this),
             error: function(xhr, status, err) {
@@ -49,10 +50,11 @@ var CommentBox = React.createClass({
             $.ajax({
                 url: urls.POST.newComment,
                 dataType: 'json',
+                contentType: 'application/json; charset=utf-8',
                 type: 'POST',
-                data: comment,
+                data: JSON.stringify(comment),
                 success: function(data) {
-                    this.setState({data: data});
+                    setTimeout(1000, this.loadCommentsFromServer);
                 }.bind(this),
                 error: function(xhr, status, err) {
                     console.error(urls.POST.newComment, status, err.toString());

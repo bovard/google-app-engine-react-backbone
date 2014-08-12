@@ -7,7 +7,7 @@ import models
 
 @get('/comments/')
 def get_all_comments():
-    logging.info("Getting matches!")
+    logging.info("Getting all comments!")
     comments = models.Comment.query().order(models.Comment.created).fetch(100)
     to_return = [models.comment_to_json(comment) for comment in comments]
     response.content_type = 'application/json'
@@ -16,10 +16,11 @@ def get_all_comments():
 
 @post('/comment')
 def create_new_comment():
-    data = json.loads(request.json)
+    logging.info("creating new comment")
+    logging.info(request.json)
     comment = models.Comment(
-        comment = data.get('comment'),
-        commentAuthor = data.get('commentAuthor')
+        text=request.json.get('text'),
+        author=request.json.get('author')
     )
     comment.put()
     response.content_type = 'application/json'
