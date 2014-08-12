@@ -67,6 +67,7 @@ var CommentBox = React.createClass({
     },
     componentDidMount: function() {
         this.loadCommentsFromServer();
+        // killed this because it was too spammy when changing tabs
         //setInterval(this.loadCommentsFromServer, this.props.pollInterval);
     },
     render: function() {
