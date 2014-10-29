@@ -18,7 +18,7 @@ gulp.task('browserify', function() {
 gulp.task('release', function() {
     return gulp.src('client/main.jsx')
         .pipe(browserify({
-            debug: true,
+            debug: false,
             transform: [reactify],
             extensions: [".html",".jsx"]
         }).on('error', function(e){ console.warn("THE ERRORZ"); console.warn(e); }))
