@@ -1,34 +1,49 @@
 var gulp = require('gulp'),
-    browserify = require('gulp-browserify'),
+    browserify = require('browserify'),
+    transform = require('vinyl-transform'),
     reactify = require('reactify'),
     rename = require('gulp-rename'),
     uglify = require('gulp-uglify');
 
-gulp.task('browserify', function() {
-    return gulp.src('client/main.jsx')
-        .pipe(browserify({
+
+gulp.task('browserify', function () {
+  var browserified = transform(function(filename) {
+    var b = browserify({
+            entries: [filename],
             debug: true,
             transform: [reactify],
             extensions: [".html",".jsx"]
-        }).on('error', function(e){ console.warn("THE ERRORZ"); console.warn(e); }))
-        .pipe(rename('main.js'))
-        .pipe(gulp.dest('server/build/'));
+        });
+    return b.bundle();
+  });
+
+  return gulp.src(['admin/main.jsx'])
+    .pipe(browserified)
+    .pipe(uglify())
+    .pipe(rename('admin.js'))
+    .pipe(gulp.dest('server/build/'));
 });
 
-gulp.task('release', function() {
-    return gulp.src('client/main.jsx')
-        .pipe(browserify({
-            debug: false,
+gulp.task('release', function () {
+  var browserified = transform(function(filename) {
+    var b = browserify({
+            entries: [filename],
+            debug: true,
             transform: [reactify],
             extensions: [".html",".jsx"]
-        }).on('error', function(e){ console.warn("THE ERRORZ"); console.warn(e); }))
-        .pipe(uglify())
-        .pipe(rename('main.js'))
-        .pipe(gulp.dest('server/build/'));
+        });
+    return b.bundle();
+  });
+
+  return gulp.src(['admin/main.jsx'])
+    .pipe(browserified)
+    .pipe(uglify())
+    .pipe(rename('admin.js'))
+    .pipe(gulp.dest('server/build/'));
 });
 
 gulp.task('watch', function() {
-    gulp.watch(["client/**"], ["browserify"]);
+    gulp.watch(["admin/**"], ["browserify"]);
 });
 
 gulp.task('default', ["browserify", "watch"]);
