@@ -17,10 +17,10 @@ gulp.task('browserify', function () {
     return b.bundle();
   });
 
-  return gulp.src(['admin/main.jsx'])
+  return gulp.src(['client/main.jsx'])
     .pipe(browserified)
     .pipe(uglify())
-    .pipe(rename('admin.js'))
+    .pipe(rename('main.js'))
     .pipe(gulp.dest('server/build/'));
 });
 
@@ -35,10 +35,10 @@ gulp.task('release', function () {
     return b.bundle();
   });
 
-  return gulp.src(['admin/main.jsx'])
+  return gulp.src(['client/main.jsx'])
     .pipe(browserified)
     .pipe(uglify())
-    .pipe(rename('admin.js'))
+    .pipe(rename('main.js'))
     .pipe(gulp.dest('server/build/'));
 });
 
