@@ -43,7 +43,7 @@ gulp.task('release', function () {
 });
 
 gulp.task('watch', function() {
-    gulp.watch(["admin/**"], ["browserify"]);
+    gulp.watch(["client/**"], ["browserify"]);
 });
 
 gulp.task('default', ["browserify", "watch"]);
